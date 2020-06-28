@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+$c: center;
+
+.wrapper {
+  display: flex;
+    .side-bar {
+        align-items: $c;
+        width: 300px;
+        &__user-name {
+            display: flex;
+            justify-content: $c;
+            align-items: $c;
+            background-color: #253141;
+            height: 100px; 
+            .top-items {
+              display: flex;
+              justify-content: space-between;
+              height: 20px;
+              width: 260px;
+              background-color: #253141;
+              &__name{
+                font-size: 16px;
+                color: #ffffff;
+              }      
+              &__icons {
+                width: 60px;
+                background-color: #253141;
+                display: flex;
+                justify-content: flex-end;
+                &__edit{
+                  color: #ffffff;
+                }
+                &__cog{
+                  color: #ffffff;
+                  padding-left: 5px;
+                }
+              }
+             }
+          }
+        &__group-list{
+          height: 900px;
+          width: 300px;
+          background-color: #2f3e51;
+          .middle-items{
+            padding: 20px 20px 40px 20px;
+            color: #ffffff;
+            &__group-name{
+              margin-top: 10px;
+              font-size: 15px;
+            }
+            &__messages{
+              margin-top: 5px;
+              font-size: 11px;
+            }
+          } 
+        }
+     }
+    .main-chat {
+      width: calc(100vw - 300px) ;
+      &__group-info{
+        height: 100px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: $c;
+        .head-items{
+         margin-left: 40px;
+         margin-bottom: 0px;
+          &__team{
+            font-size: 20px;
+            color: #333333;
+            margin-top: 35px;
+         }
+          &__members{
+            font-size: 12px;
+            color: #999999;
+            margin-top: 15px;
+          }
+        }
+        .head-btn{
+         width: 72px;
+         display: flex;
+         text-decoration: none;
+         margin: 28px 40px 28px 0px;
+          &__edit{
+          height: 40px;
+          font-size: 16px;
+          padding: 5px 20px;
+          color: #38aef0;
+          border: 1px solid #38aef0; 
+          display: block;
+          a {
+            text-decoration: none;
+            color: #38aef0;
+          }
+          }
+        }  
+      }
+      &__message-list{
+        height: calc(100vh - 100px - 90px);
+        background-color: #fafafa;
+        padding-left: 40px;
+        .who-when-a{
+          padding-top: 35px;
+          display: flex;
+          justify-content: flex-start;
+          &__sender{
+            font-size: 16px;
+            color: #333333;
+          }
+          &__time{
+            font-size: 12px;
+            color: #999999;
+          }
+        }
+       .text-a{
+          font-size: 14px;
+          color: #434A54;
+          margin-top: 12px;
+        }
+        .who-when-b{
+          margin-top: 46px;
+          display: flex;
+          justify-content: flex-start;
+          &__sender{
+            font-size: 16px;
+            color: #333333;
+          }
+          &__time{
+            font-size: 12px;
+            color: #999999;
+          }
+        }
+        .text-b{
+          font-size: 14px;
+          color: #434A54;
+          margin-top: 12px;
+        }
+      }
+      &__messages-form{
+        background-color: #d2d2d2;
+        height: 90px;
+        display: flex;
+        align-items: $c;
+        .bottom-space{
+          display: flex;
+          margin: 10px 40px;
+          height: 50px;
+          &__white{
+            width: 935px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: $c;
+            position: relative;
+            margin-right: 15px;
+            &__holder{
+              padding-left: 10px;
+              color: #999999;
+             }
+            &__picture{
+              position: absolute;
+              display: flex;
+              align-items: $c;
+              right: 10px;
+              &__mtn{
+                padding-left: 10px;
+                color: #253141;
+              }
+              &__file{
+                display: none;
+              }
+            }
+          }
+          &__blue{
+            background-color: #38aef0;
+            border: 1px solid #38aef0;
+            padding: 0px 30px;
+            margin-left: 15px;
+            display: flex;
+            align-items: $c;
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+}
