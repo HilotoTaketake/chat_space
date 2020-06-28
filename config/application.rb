@@ -15,6 +15,8 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
+      g.mailer.html.haml
+      g.mailer.text.haml
     end
 
     # Settings in config/environments/* take precedence over those specified here.
