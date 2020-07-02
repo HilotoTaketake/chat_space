@@ -5,10 +5,12 @@
         masa
       .top-items__icons
         =link_to "#" do
-          = icon('fas', 'edit',  class:"top-items__icons__edit")
+          = link_to new_group_path(current_user) do
+            = icon('fas', 'edit',  class:"top-items__icons__edit")
         =link_to "#" do
           = icon('fa', 'cog',  class:"top-items__icons__cog")
   .side-bar__group-list
+<<<<<<< Updated upstream
     .middle-items
       .middle-items__group-name
         techcamp
@@ -19,3 +21,13 @@
 
 
  
+=======
+    - current_user.groups.each do |group|
+      .middle-items
+        = link_to '#'do
+          .middle-items__group-name
+            techcamp
+          .middle-items__messages
+            まだメッセージがありません
+      
+>>>>>>> Stashed changes
