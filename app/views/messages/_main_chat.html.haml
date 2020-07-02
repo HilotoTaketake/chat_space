@@ -25,13 +25,12 @@
       おやすみ！
 
   .main-chat__messages-form
-    .bottom-space
+    %form.bottom-space
       .bottom-space__white
-        .bottom-space__white__holder
-          type a message
-        .bottom-space__white__picture
-          %label
-            = icon('fa','image', class: "bottom-space__white__picture__mtn")
-            %input{type: "file", class: "bottom-space__white__picture__file"}
-      .bottom-space__blue
-        = link_to "Send", class: 'bottom-space__blue'
+        %input.bottom-space__white__line{type: 'text', placeholder: 'type a message'}
+        %label.bottom-space__white__picture
+          = icon('fa','image', class: "bottom-space__white__picture__mtn")
+          %input{type: "file", class: "bottom-space__white__picture__file"}
+      %input.bottom-space__blue{type: 'submit', value: 'Send'}
+
+
