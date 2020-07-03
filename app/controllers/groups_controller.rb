@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @group = Group.fing(params[:id])
+    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to root_path, notice: 'グループを更新しました'
     else

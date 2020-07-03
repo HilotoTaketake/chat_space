@@ -94,10 +94,7 @@ $c: center;
           color: #38aef0;
           border: 1px solid #38aef0; 
           display: block;
-          a {
-            text-decoration: none;
-            color: #38aef0;
-          }
+          text-decoration: none;
           }
         }  
       }
@@ -118,11 +115,11 @@ $c: center;
             color: #999999;
           }
         }
-       .text-a{
+        .text-a{
           font-size: 14px;
           color: #434A54;
           margin-top: 12px;
-       }
+          }
         .who-when-b{
           margin-top: 46px;
           display: flex;
@@ -140,7 +137,7 @@ $c: center;
           font-size: 14px;
           color: #434A54;
           margin-top: 12px;
-        }
+          }
       }
       &__messages-form{
         background-color: #d2d2d2;
@@ -161,11 +158,13 @@ $c: center;
             background-color: #ffffff;
             display: flex;
             align-items: $c;
-            padding-left: 10px;    
+            padding-left: 10px;  
+            border: none;  
             }
             &__picture{
               position: absolute;
               right: 10px;
+              font-size: 25px;
               &__mtn{
                 color: #253141;
               }
@@ -181,10 +180,9 @@ $c: center;
             margin-left: 15px;
             display: flex;
             align-items: $c;
-            a {
-              color: #ffffff;
-              text-decoration: none;
-            }
+            color: #ffffff;
+            text-decoration: none;
+            
           }
         }
       }
