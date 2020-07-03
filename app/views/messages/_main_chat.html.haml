@@ -2,13 +2,15 @@
   .main-chat__group-info
     .head-items
       .head-items__team
-        test
+        = @group.name
       .head-items__members
-        Member : masa
+        - @group.users.each do |g| #グループメンバーを一人一人取り出さないといけないのでeach文を利用する。
+          = g.names #namesは単数でも複数でもエラーは起きないがグループチャットで複数人いることが前提なので複数形にした
     .head-btn
-      .head-btn__edit
-        = link_to "Edit", class: 'head-btn__edit'   
+      = link_to edit_group_path(current_user.id),class: "head-btn__edit" do  
+        Edit
   .main-chat__message-list
+    = render @messages
     .who-when-a
       .who-when-a__sender
         masa 
@@ -21,16 +23,14 @@
         take 
       .who-when-b__time
         2019/11/20(Wed) 17:43:03
-    .text-b
-      おやすみ！
-
+      .text-b
+        おやすみ！
+  
   .main-chat__messages-form
-    %form.bottom-space
+    = form_with model: [@group, @message], html: {class: "bottom-space"}, local: true do |f|
       .bottom-space__white
-        %input.bottom-space__white__line{type: 'text', placeholder: 'type a message'}
-        %label.bottom-space__white__picture
-          = icon('fa','image', class: "bottom-space__white__picture__mtn")
-          %input{type: "file", class: "bottom-space__white__picture__file"}
-      %input.bottom-space__blue{type: 'submit', value: 'Send'}
-
-
+        = f.text_field :content, class: 'bottom-space__white__line', placeholder: 'type a message'
+        = f.label :image, class: 'bottom-space__white__picture' do
+          = icon('far', 'image', class: 'bottom-space__white__picture__mtn')
+          = f.file_field :image, class: 'bottom-space__white__picture__file'
+      = f.submit 'Send', class: 'bottom-space__blue'

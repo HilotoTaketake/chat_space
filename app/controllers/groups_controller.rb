@@ -1,12 +1,38 @@
 class GroupsController < ApplicationController
 
-  def new #データを生成するアクション
-    @group = Group.new #ビューにデータを渡す為にインスタンス変数をここで定義しておく.Groupというインスタンスを作成
-    @group.users << current_user #グループのユーザーに現在のユーザーを代入する
+  def index
   end
 
-  def create   #情報を生成し保存してくれるアクション
-    binding.pry #gemfileにpry-railsを記述してインストールすることで扱えるようになるgemで、binding.pryがある箇所でrailsの処理を止めておくことができる
+  def new
+    @group = Group.new
+    @group.users << current_user
   end
-  
+
+  def create
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, notice: 'グループを作成しました'
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to root_path, notice: 'グループを更新しました'
+    else
+      render :edit
+    end
+  end
+
+  private
+  def group_params
+    params.require(:group).permit(:name, user_ids: [])
+  end
+
 end
