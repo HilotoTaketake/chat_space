@@ -5,6 +5,7 @@ $c: center;
 
 .wrapper {
   display: flex;
+  height: 100%;
     .side-bar {
         align-items: $c;
         width: 300px;
@@ -40,11 +41,13 @@ $c: center;
              }
           }
         &__group-list{
-          height: 900px;
+          overflow: scroll;
+          height: calc(100vh - 100px);
           width: 300px;
           background-color: #2f3e51;
+          padding: 0px 20px;
           .middle-items{
-            padding: 20px 20px 40px 20px;
+            padding: 20px 0px 40px;
             &__group-name{
               margin-top: 10px;
               font-size: 15px;
@@ -62,6 +65,7 @@ $c: center;
      }
     .main-chat {
       width: calc(100vw - 300px) ;
+      height: 100%;
       &__group-info{
         height: 100px;
         background-color: #ffffff;
@@ -75,11 +79,11 @@ $c: center;
             font-size: 20px;
             color: #333333;
             margin-top: 35px;
-         }
+          }
           &__members{
-            font-size: 12px;
+            font-size: 15px;
             color: #999999;
-            margin-top: 15px;
+            margin-top: 12px;
           }
         }
         .head-btn{
@@ -99,15 +103,17 @@ $c: center;
         }  
       }
       &__message-list{
-        height: calc(100vh - 100px - 90px);
+        height: calc(100vh - 190px);
         background-color: #fafafa;
         padding-left: 40px;
-        .who-when-a{
+        overflow: scroll;
+
+        .what-who-when{
           padding-top: 35px;
           display: flex;
           justify-content: flex-start;
           &__sender{
-            font-size: 16px;
+            font-size: 20px;
             color: #333333;
           }
           &__time{
@@ -115,29 +121,13 @@ $c: center;
             color: #999999;
           }
         }
-        .text-a{
-          font-size: 14px;
-          color: #434A54;
+        .what-message{
           margin-top: 12px;
-          }
-        .who-when-b{
-          margin-top: 46px;
-          display: flex;
-          justify-content: flex-start;
-          &__sender{
-            font-size: 16px;
-            color: #333333;
-          }
-          &__time{
-            font-size: 12px;
-            color: #999999;
+          &__text{
+            font-size: 14px;
+            color: #434A54;
           }
         }
-        .text-b{
-          font-size: 14px;
-          color: #434A54;
-          margin-top: 12px;
-          }
       }
       &__messages-form{
         background-color: #d2d2d2;
@@ -153,8 +143,8 @@ $c: center;
             display: flex;
             align-items: $c;
             &__line{
-            width: 935px;
             height: 50px;
+            width: calc(100vw - 500px);
             background-color: #ffffff;
             display: flex;
             align-items: $c;
