@@ -1,11 +1,11 @@
-.MessageBox
-  .MessageInfo
-    .MessageInfo__userName
+.main-chat__message-list__js
+  .what-who-when
+    .what-who-when__sender
       = message.user.name
-    .MessageInfo__date
+    .what-who-when__time
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .Message
+  .what-message
     - if message.content.present?
-      %p.Message__content
+      .what-message__text
         = message.content
     = image_tag message.image.url, class: 'Message__image' if message.image.present?

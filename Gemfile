@@ -58,3 +58,4 @@ gem 'devise'
 gem 'pry-rails' #gemの１つでruby on rails におけるバグを見つけてくれるgem.binding。pryというgemはpry-railsを追加すると扱えるようになる。
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
