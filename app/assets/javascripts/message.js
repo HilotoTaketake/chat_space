@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="main-chat__message-list">
+        `<div class="main-chat__message-list__js">
           <div class="what-who-when">
             <div class="what-who-when__sender">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="main-chat__message-list">
+      `<div class="main-chat__message-list__js">
         <div class="what-who-when">
           <div class="what-who-when__sender">
             ${message.user_name}
@@ -45,7 +45,7 @@ $(function(){
     let formData = new FormData(this);
     let url = $(this).attr('action');
 
-    $('bottom-space__blue').removeAttr('data-disable-with');
+    $('.bottom-space__blue').removeAttr('data-disable-with');
 
     $.ajax({
       url: url,
