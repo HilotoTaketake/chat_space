@@ -59,3 +59,7 @@ gem 'pry-rails' #gemの１つでruby on rails におけるバグを見つけて�
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
